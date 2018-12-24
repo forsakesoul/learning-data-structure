@@ -26,5 +26,5 @@ console.log(
   '排序后: ', bubbleSort([3, 5, 4, 1, 2, 6])
 )
 console.log(
-  '排序后: ', bubbleSort(randomArray(20))
+  '排序后: ', bubbleSort(randomArray(10))
 )
