@@ -1,9 +1,9 @@
 const randomArray = require('../random');
 
-const selectSort = (arr) => {
+const insetSort = (arr) => {
   if (arr.length <= 1) return;
   for (let i = 1; i < arr.length; ++i) {
-    let value = arr[i];
+    const value = arr[i];
     let j = i - 1;
     for (; j >= 0; j--) {
       if (arr[j] > value) {
@@ -18,7 +18,7 @@ const selectSort = (arr) => {
 }
 
 console.log(
-  selectSort(
+  insetSort(
     randomArray(10)
   )
 );
