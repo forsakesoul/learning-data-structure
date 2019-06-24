@@ -1,4 +1,4 @@
-const randomArray = require('../random')
+const randomArray = require('../../random')
 
 const bubbleSort = arr => {
   if (arr.length === 0) return arr

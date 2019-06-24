@@ -1,4 +1,4 @@
-const randomArray = require('../random');
+const randomArray = require('../../random');
 
 const insetSort = (arr) => {
   if (arr.length <= 1) return

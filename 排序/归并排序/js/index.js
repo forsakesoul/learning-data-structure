@@ -1,4 +1,4 @@
-const randomArray = require('../random');
+const randomArray = require('../../random');
 
 const merge_sort = arr => {
   const len = arr.length
