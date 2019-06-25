@@ -27,7 +27,7 @@ class Link {
       currentNode = currentNode.next
       pos++
     }
-    return currentNode === null ? -1 : pos
+    return currentNode === null ? -1 : currentNode
   }
 
   append(newEle) {
@@ -50,6 +50,28 @@ class Link {
     currentNode.next = newNode
   }
 
+  findPrev(element) {
+    let currentNode = this.head
+    while (element !== currentNode.next.element && currentNode.next !== null) {
+      currentNode = currentNode.next
+    }
+    if (currentNode.next === null) {
+      return -1
+    }
+    return currentNode
+  }
+
+  remove(element) {
+    const prevNode = this.findPrev(element)
+    if (prevNode === -1) {
+      console.log('没找到')
+      return -1;
+    }
+    const removeItem = prevNode.next;
+    prevNode.next = prevNode.next.next;
+    return removeItem.element;
+  }
+
   display() {
     let currentNode = this.head.next
     let displayArr = [];
@@ -64,4 +86,12 @@ class Link {
 const list = new Link()
 list.append('one')
 list.append('two')
+list.append('three')
+list.append('four')
+list.append('five')
 console.log('list', list.display())
+console.log('prev', list.findPrev('two'))
+console.log('remove', list.remove('four'))
+console.log('after-remove', list.display())
+console.log('find-By-index', list.findByIndex(1))
+console.log('find-By-value', list.findByValue('two'))
