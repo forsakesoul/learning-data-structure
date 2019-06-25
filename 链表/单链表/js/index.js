@@ -49,10 +49,19 @@ class Link {
     newNode.next = currentNode.next
     currentNode.next = newNode
   }
+
+  display() {
+    let currentNode = this.head.next
+    let displayArr = [];
+    while (currentNode !== null) {
+      displayArr.push(currentNode.element)
+      currentNode = currentNode.next
+    }
+    return displayArr
+  }
 }
 
 const list = new Link()
-console.log('list', list)
 list.append('one')
 list.append('two')
-console.log('list', list)
+console.log('list', list.display())
