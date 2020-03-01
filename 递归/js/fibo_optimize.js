@@ -9,5 +9,5 @@ function fibo(n) {
   return ret
 }
 console.log(
-  fibo(50)
+  fibo(5)
 )
