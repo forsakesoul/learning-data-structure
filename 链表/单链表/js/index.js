@@ -8,6 +8,7 @@ class Node {
 class Link {
   constructor() {
     this.head = new Node('head')
+    this.size = 0;
   }
 
   // 根据值查找
@@ -37,6 +38,7 @@ class Link {
       currentNode = currentNode.next
     }
     currentNode.next = newNode
+    this.size++
   }
 
   insert(newElement, element) {
@@ -48,6 +50,7 @@ class Link {
     const newNode = new Node(newElement)
     newNode.next = currentNode.next
     currentNode.next = newNode
+    this.size++
   }
 
   findPrev(element) {
@@ -69,6 +72,7 @@ class Link {
     }
     const removeItem = prevNode.next;
     prevNode.next = prevNode.next.next;
+    this.size--
     return removeItem.element;
   }
 
@@ -81,6 +85,10 @@ class Link {
     }
     return displayArr
   }
+
+  getSize() {
+    return this.size;
+  }
 }
 
 const list = new Link()
@@ -90,8 +98,9 @@ list.append('three')
 list.append('four')
 list.append('five')
 console.log('list', list.display())
-console.log('prev', list.findPrev('two'))
-console.log('remove', list.remove('four'))
-console.log('after-remove', list.display())
-console.log('find-By-index', list.findByIndex(1))
-console.log('find-By-value', list.findByValue('two'))
+console.log('size', list.getSize())
+// console.log('prev', list.findPrev('two'))
+// console.log('remove', list.remove('four'))
+// console.log('after-remove', list.display())
+// console.log('find-By-index', list.findByIndex(1))
+// console.log('find-By-value', list.findByValue('two'))
